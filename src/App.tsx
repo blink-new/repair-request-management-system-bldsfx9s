@@ -1,10 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Toaster } from '@/components/ui/sonner'
-import Layout from '@/components/Layout'
-import Dashboard from '@/pages/Dashboard'
-import NewRequest from '@/pages/NewRequest'
-import RequestDetail from '@/pages/RequestDetail'
-import Calendar from '@/pages/Calendar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import RepairRequests from './pages/RepairRequests';
+import NewRequest from './pages/NewRequest';
+import Layout from './components/Layout';
 
 function App() {
   return (
@@ -12,14 +10,12 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/nouvelle-demande" element={<NewRequest />} />
-          <Route path="/demande/:id" element={<RequestDetail />} />
-          <Route path="/agenda" element={<Calendar />} />
+          <Route path="/repair-requests" element={<RepairRequests />} />
+          <Route path="/new-request" element={<NewRequest />} />
         </Routes>
       </Layout>
-      <Toaster />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
